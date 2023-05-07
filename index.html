@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cyber Times</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        article {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+        h1, h2, time {
+            margin: 0;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Cyber Times</h1>
+        {% for article in articles %}
+            <article>
+                <h2><a href="{{ article.url }}" target="_blank">{{ article.name }}</a></h2>
+                <time>{{ article.formattedDate }}</time>
+                <p>{{ article.description }}</p>
+            </article>
+        {% endfor %}
+    </div>
+</body>
+</html>
